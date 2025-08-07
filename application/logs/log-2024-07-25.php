@@ -1,0 +1,37 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2024-07-25 09:38:13 --> 404 Page Not Found: Wp-includes/ID3
+ERROR - 2024-07-25 09:38:13 --> 404 Page Not Found: Feed/index
+ERROR - 2024-07-25 09:38:14 --> 404 Page Not Found: Xmlrpcphp/index
+ERROR - 2024-07-25 09:38:14 --> 404 Page Not Found: Blog/wp-includes
+ERROR - 2024-07-25 09:38:14 --> 404 Page Not Found: Web/wp-includes
+ERROR - 2024-07-25 09:38:14 --> 404 Page Not Found: Wordpress/wp-includes
+ERROR - 2024-07-25 09:38:14 --> 404 Page Not Found: Wp/wp-includes
+ERROR - 2024-07-25 09:38:14 --> 404 Page Not Found: 2020/wp-includes
+ERROR - 2024-07-25 09:38:15 --> 404 Page Not Found: 2019/wp-includes
+ERROR - 2024-07-25 09:38:15 --> 404 Page Not Found: 2021/wp-includes
+ERROR - 2024-07-25 09:38:15 --> 404 Page Not Found: Shop/wp-includes
+ERROR - 2024-07-25 09:38:15 --> 404 Page Not Found: Wp1/wp-includes
+ERROR - 2024-07-25 09:38:15 --> 404 Page Not Found: Test/wp-includes
+ERROR - 2024-07-25 09:38:16 --> 404 Page Not Found: Site/wp-includes
+ERROR - 2024-07-25 09:38:16 --> 404 Page Not Found: Cms/wp-includes
+ERROR - 2024-07-25 13:22:36 --> 404 Page Not Found: Wp-includes/ID3
+ERROR - 2024-07-25 13:22:36 --> 404 Page Not Found: Feed/index
+ERROR - 2024-07-25 13:22:36 --> 404 Page Not Found: Xmlrpcphp/index
+ERROR - 2024-07-25 13:22:36 --> 404 Page Not Found: Blog/wp-includes
+ERROR - 2024-07-25 13:22:36 --> 404 Page Not Found: Web/wp-includes
+ERROR - 2024-07-25 13:22:36 --> 404 Page Not Found: Wordpress/wp-includes
+ERROR - 2024-07-25 13:22:36 --> 404 Page Not Found: Wp/wp-includes
+ERROR - 2024-07-25 13:22:36 --> 404 Page Not Found: 2020/wp-includes
+ERROR - 2024-07-25 13:22:36 --> 404 Page Not Found: 2019/wp-includes
+ERROR - 2024-07-25 13:22:36 --> 404 Page Not Found: 2021/wp-includes
+ERROR - 2024-07-25 13:22:36 --> 404 Page Not Found: Shop/wp-includes
+ERROR - 2024-07-25 13:22:36 --> 404 Page Not Found: Wp1/wp-includes
+ERROR - 2024-07-25 13:22:36 --> 404 Page Not Found: Test/wp-includes
+ERROR - 2024-07-25 13:22:36 --> 404 Page Not Found: Site/wp-includes
+ERROR - 2024-07-25 13:22:36 --> 404 Page Not Found: Cms/wp-includes
+ERROR - 2024-07-25 21:08:48 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2024-07-25 23:11:38 --> 404 Page Not Found: Simplephp/index
+ERROR - 2024-07-25 23:11:44 --> 404 Page Not Found: Stylephp/index
+ERROR - 2024-07-25 23:11:58 --> 404 Page Not Found: Chosenphp/index
+ERROR - 2024-07-25 23:12:07 --> 404 Page Not Found: Simplephp/index

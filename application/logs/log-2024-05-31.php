@@ -1,0 +1,31 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2024-05-31 02:21:11 --> 404 Page Not Found: DS_Store/index
+ERROR - 2024-05-31 03:27:33 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2024-05-31 07:04:41 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2024-05-31 07:04:44 --> 404 Page Not Found: Sitemapxml/index
+ERROR - 2024-05-31 07:48:08 --> 404 Page Not Found: Git/config
+ERROR - 2024-05-31 09:15:28 --> 404 Page Not Found: Git/config
+ERROR - 2024-05-31 09:31:43 --> 404 Page Not Found: Git/config
+ERROR - 2024-05-31 09:44:32 --> 404 Page Not Found: Git/config
+ERROR - 2024-05-31 10:01:16 --> 404 Page Not Found: Git/config
+ERROR - 2024-05-31 10:02:58 --> 404 Page Not Found: Git/config
+ERROR - 2024-05-31 10:17:21 --> 404 Page Not Found: Git/config
+ERROR - 2024-05-31 11:05:49 --> 404 Page Not Found: Git/config
+ERROR - 2024-05-31 14:01:17 --> 404 Page Not Found: Sftp-configjson/index
+ERROR - 2024-05-31 14:01:17 --> 404 Page Not Found: Vscode/sftp.json
+ERROR - 2024-05-31 20:55:24 --> 404 Page Not Found: Wp-includes/ID3
+ERROR - 2024-05-31 20:55:24 --> 404 Page Not Found: Feed/index
+ERROR - 2024-05-31 20:55:24 --> 404 Page Not Found: Xmlrpcphp/index
+ERROR - 2024-05-31 20:55:24 --> 404 Page Not Found: Blog/wp-includes
+ERROR - 2024-05-31 20:55:24 --> 404 Page Not Found: Web/wp-includes
+ERROR - 2024-05-31 20:55:24 --> 404 Page Not Found: Wordpress/wp-includes
+ERROR - 2024-05-31 20:55:24 --> 404 Page Not Found: Wp/wp-includes
+ERROR - 2024-05-31 20:55:25 --> 404 Page Not Found: 2020/wp-includes
+ERROR - 2024-05-31 20:55:28 --> 404 Page Not Found: 2019/wp-includes
+ERROR - 2024-05-31 20:55:29 --> 404 Page Not Found: 2021/wp-includes
+ERROR - 2024-05-31 20:55:30 --> 404 Page Not Found: Shop/wp-includes
+ERROR - 2024-05-31 20:55:30 --> 404 Page Not Found: Wp1/wp-includes
+ERROR - 2024-05-31 20:55:31 --> 404 Page Not Found: Test/wp-includes
+ERROR - 2024-05-31 20:55:31 --> 404 Page Not Found: Site/wp-includes
+ERROR - 2024-05-31 20:55:31 --> 404 Page Not Found: Cms/wp-includes

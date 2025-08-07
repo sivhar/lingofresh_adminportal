@@ -1,0 +1,29 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2024-02-24 17:37:54 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2024-02-24 21:52:33 --> 404 Page Not Found: Lingofreshin/assets
+ERROR - 2024-02-24 21:52:33 --> 404 Page Not Found: Lingofreshin/assets
+ERROR - 2024-02-24 21:52:33 --> 404 Page Not Found: Lingofreshin/assets
+ERROR - 2024-02-24 21:52:33 --> 404 Page Not Found: Lingofreshin/assets
+ERROR - 2024-02-24 21:52:33 --> 404 Page Not Found: Lingofreshin/assets
+ERROR - 2024-02-24 21:52:53 --> 404 Page Not Found: Lingofreshin/assets
+ERROR - 2024-02-24 21:52:53 --> 404 Page Not Found: Lingofreshin/assets
+ERROR - 2024-02-24 21:52:53 --> 404 Page Not Found: Lingofreshin/assets
+ERROR - 2024-02-24 21:52:53 --> 404 Page Not Found: Lingofreshin/assets
+ERROR - 2024-02-24 21:52:53 --> 404 Page Not Found: Lingofreshin/assets
+ERROR - 2024-02-24 21:53:12 --> 404 Page Not Found: Lingofreshin/assets
+ERROR - 2024-02-24 21:53:12 --> 404 Page Not Found: Lingofreshin/assets
+ERROR - 2024-02-24 21:53:12 --> 404 Page Not Found: Lingofreshin/assets
+ERROR - 2024-02-24 21:53:12 --> 404 Page Not Found: Lingofreshin/assets
+ERROR - 2024-02-24 21:53:14 --> 404 Page Not Found: Lingofreshin/assets
+ERROR - 2024-02-24 21:53:32 --> 404 Page Not Found: Lingofreshin/assets
+ERROR - 2024-02-24 21:53:32 --> 404 Page Not Found: Lingofreshin/assets
+ERROR - 2024-02-24 21:53:32 --> 404 Page Not Found: Lingofreshin/assets
+ERROR - 2024-02-24 21:53:32 --> 404 Page Not Found: Lingofreshin/assets
+ERROR - 2024-02-24 21:53:36 --> 404 Page Not Found: Lingofreshin/assets
+ERROR - 2024-02-24 21:53:38 --> 404 Page Not Found: Lingofreshin/assets
+ERROR - 2024-02-24 23:25:52 --> 404 Page Not Found: Lingofreshin/assets
+ERROR - 2024-02-24 23:25:52 --> 404 Page Not Found: Lingofreshin/assets
+ERROR - 2024-02-24 23:25:52 --> 404 Page Not Found: Lingofreshin/assets
+ERROR - 2024-02-24 23:25:53 --> 404 Page Not Found: Lingofreshin/assets
+ERROR - 2024-02-24 23:25:53 --> 404 Page Not Found: Lingofreshin/assets
