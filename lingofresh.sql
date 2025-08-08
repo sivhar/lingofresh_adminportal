@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: Aug 01, 2025 at 03:47 PM
--- Server version: 11.5.2-MariaDB
--- PHP Version: 8.1.31
+-- Host: 127.0.0.1
+-- Generation Time: Aug 08, 2025 at 02:08 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -27,8 +27,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `contest_data_format`
 --
 
-DROP TABLE IF EXISTS `contest_data_format`;
-CREATE TABLE IF NOT EXISTS `contest_data_format` (
+CREATE TABLE `contest_data_format` (
   `COL 1` varchar(10) DEFAULT NULL,
   `COL 2` varchar(47) DEFAULT NULL,
   `COL 3` varchar(24) DEFAULT NULL,
@@ -39,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `contest_data_format` (
   `COL 8` varchar(56) DEFAULT NULL,
   `COL 9` varchar(6) DEFAULT NULL,
   `COL 10` varchar(8) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `contest_data_format`
@@ -56,8 +55,7 @@ INSERT INTO `contest_data_format` (`COL 1`, `COL 2`, `COL 3`, `COL 4`, `COL 5`, 
 -- Table structure for table `data_format_1`
 --
 
-DROP TABLE IF EXISTS `data_format_1`;
-CREATE TABLE IF NOT EXISTS `data_format_1` (
+CREATE TABLE `data_format_1` (
   `COL 1` varchar(8) DEFAULT NULL,
   `COL 2` varchar(11) DEFAULT NULL,
   `COL 3` varchar(11) DEFAULT NULL,
@@ -71,7 +69,7 @@ CREATE TABLE IF NOT EXISTS `data_format_1` (
   `COL 11` varchar(6) DEFAULT NULL,
   `COL 12` varchar(5) DEFAULT NULL,
   `COL 13` varchar(8) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `data_format_1`
@@ -88,8 +86,7 @@ INSERT INTO `data_format_1` (`COL 1`, `COL 2`, `COL 3`, `COL 4`, `COL 5`, `COL 6
 -- Table structure for table `exam_question_data_format`
 --
 
-DROP TABLE IF EXISTS `exam_question_data_format`;
-CREATE TABLE IF NOT EXISTS `exam_question_data_format` (
+CREATE TABLE `exam_question_data_format` (
   `COL 1` varchar(14) DEFAULT NULL,
   `COL 2` varchar(4) DEFAULT NULL,
   `COL 3` varchar(47) DEFAULT NULL,
@@ -100,7 +97,7 @@ CREATE TABLE IF NOT EXISTS `exam_question_data_format` (
   `COL 8` varchar(54) DEFAULT NULL,
   `COL 9` varchar(56) DEFAULT NULL,
   `COL 10` varchar(6) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `exam_question_data_format`
@@ -117,9 +114,8 @@ INSERT INTO `exam_question_data_format` (`COL 1`, `COL 2`, `COL 3`, `COL 4`, `CO
 -- Table structure for table `tbl_audio_question`
 --
 
-DROP TABLE IF EXISTS `tbl_audio_question`;
-CREATE TABLE IF NOT EXISTS `tbl_audio_question` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tbl_audio_question` (
+  `id` int(11) NOT NULL,
   `category` int(11) NOT NULL,
   `subcategory` int(11) NOT NULL,
   `language_id` int(11) NOT NULL DEFAULT 0,
@@ -133,11 +129,7 @@ CREATE TABLE IF NOT EXISTS `tbl_audio_question` (
   `optiond` text CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
   `optione` text CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
   `answer` text CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
-  `note` text CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `category` (`category`),
-  KEY `subcategory` (`subcategory`) USING BTREE,
-  KEY `language_id` (`language_id`)
+  `note` text CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
@@ -146,15 +138,13 @@ CREATE TABLE IF NOT EXISTS `tbl_audio_question` (
 -- Table structure for table `tbl_authenticate`
 --
 
-DROP TABLE IF EXISTS `tbl_authenticate`;
-CREATE TABLE IF NOT EXISTS `tbl_authenticate` (
-  `auth_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tbl_authenticate` (
+  `auth_id` int(11) NOT NULL,
   `auth_username` varchar(100) NOT NULL,
   `auth_pass` varchar(255) NOT NULL,
   `role` varchar(50) DEFAULT NULL,
-  `status` tinyint(4) DEFAULT 1,
-  PRIMARY KEY (`auth_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `status` tinyint(4) DEFAULT 1
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tbl_authenticate`
@@ -168,8 +158,16 @@ INSERT INTO `tbl_authenticate` (`auth_id`, `auth_username`, `auth_pass`, `role`,
 --
 -- Table structure for table `tbl_badges`
 --
--- Error reading structure for table lingofresh.tbl_badges: #1932 - Table &#039;lingofresh.tbl_badges&#039; doesn&#039;t exist in engine
--- Error reading data for table lingofresh.tbl_badges: #1064 - You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near &#039;FROM `lingofresh`.`tbl_badges`&#039; at line 1
+
+CREATE TABLE `tbl_badges` (
+  `id` int(11) NOT NULL,
+  `type` varchar(50) NOT NULL,
+  `badge_label` varchar(255) DEFAULT '',
+  `badge_note` text DEFAULT NULL,
+  `badge_reward` varchar(100) DEFAULT '',
+  `badge_counter` int(11) NOT NULL DEFAULT 0,
+  `badge_icon` varchar(255) DEFAULT ''
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -177,23 +175,12 @@ INSERT INTO `tbl_authenticate` (`auth_id`, `auth_username`, `auth_pass`, `role`,
 -- Table structure for table `tbl_battle_questions`
 --
 
-DROP TABLE IF EXISTS `tbl_battle_questions`;
-CREATE TABLE IF NOT EXISTS `tbl_battle_questions` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tbl_battle_questions` (
+  `id` int(11) NOT NULL,
   `match_id` varchar(128) NOT NULL,
-  `questions` text CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
-  `date_created` datetime NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `match_id` (`match_id`)
+  `questions` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `date_created` datetime NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_battle_statistics`
---
--- Error reading structure for table lingofresh.tbl_battle_statistics: #1932 - Table &#039;lingofresh.tbl_battle_statistics&#039; doesn&#039;t exist in engine
--- Error reading data for table lingofresh.tbl_battle_statistics: #1064 - You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near &#039;FROM `lingofresh`.`tbl_battle_statistics`&#039; at line 1
 
 -- --------------------------------------------------------
 
@@ -201,16 +188,13 @@ CREATE TABLE IF NOT EXISTS `tbl_battle_questions` (
 -- Table structure for table `tbl_category`
 --
 
-DROP TABLE IF EXISTS `tbl_category`;
-CREATE TABLE IF NOT EXISTS `tbl_category` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tbl_category` (
+  `id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL DEFAULT 0,
   `category_name` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
   `type` int(11) NOT NULL,
   `image` text CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
-  `row_order` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `language_id` (`language_id`)
+  `row_order` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
@@ -218,48 +202,19 @@ CREATE TABLE IF NOT EXISTS `tbl_category` (
 --
 -- Table structure for table `tbl_contest`
 --
--- Error reading structure for table lingofresh.tbl_contest: #1932 - Table &#039;lingofresh.tbl_contest&#039; doesn&#039;t exist in engine
--- Error reading data for table lingofresh.tbl_contest: #1064 - You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near &#039;FROM `lingofresh`.`tbl_contest`&#039; at line 1
 
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_contest_leaderboard`
---
--- Error reading structure for table lingofresh.tbl_contest_leaderboard: #1932 - Table &#039;lingofresh.tbl_contest_leaderboard&#039; doesn&#039;t exist in engine
--- Error reading data for table lingofresh.tbl_contest_leaderboard: #1064 - You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near &#039;FROM `lingofresh`.`tbl_contest_leaderboard`&#039; at line 1
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_contest_prize`
---
--- Error reading structure for table lingofresh.tbl_contest_prize: #1932 - Table &#039;lingofresh.tbl_contest_prize&#039; doesn&#039;t exist in engine
--- Error reading data for table lingofresh.tbl_contest_prize: #1064 - You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near &#039;FROM `lingofresh`.`tbl_contest_prize`&#039; at line 1
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_contest_question`
---
--- Error reading structure for table lingofresh.tbl_contest_question: #1932 - Table &#039;lingofresh.tbl_contest_question&#039; doesn&#039;t exist in engine
--- Error reading data for table lingofresh.tbl_contest_question: #1064 - You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near &#039;FROM `lingofresh`.`tbl_contest_question`&#039; at line 1
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_daily_quiz`
---
--- Error reading structure for table lingofresh.tbl_daily_quiz: #1932 - Table &#039;lingofresh.tbl_daily_quiz&#039; doesn&#039;t exist in engine
--- Error reading data for table lingofresh.tbl_daily_quiz: #1064 - You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near &#039;FROM `lingofresh`.`tbl_daily_quiz`&#039; at line 1
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_daily_quiz_user`
---
--- Error reading structure for table lingofresh.tbl_daily_quiz_user: #1932 - Table &#039;lingofresh.tbl_daily_quiz_user&#039; doesn&#039;t exist in engine
--- Error reading data for table lingofresh.tbl_daily_quiz_user: #1064 - You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near &#039;FROM `lingofresh`.`tbl_daily_quiz_user`&#039; at line 1
+CREATE TABLE `tbl_contest` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `start_date` date NOT NULL,
+  `end_date` date NOT NULL,
+  `description` text DEFAULT NULL,
+  `image` varchar(255) DEFAULT '',
+  `entry` int(11) NOT NULL,
+  `prize_status` tinyint(1) NOT NULL DEFAULT 0,
+  `date_created` datetime NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -267,11 +222,10 @@ CREATE TABLE IF NOT EXISTS `tbl_category` (
 -- Table structure for table `tbl_exam_module_question`
 --
 
-DROP TABLE IF EXISTS `tbl_exam_module_question`;
-CREATE TABLE IF NOT EXISTS `tbl_exam_module_question` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tbl_exam_module_question` (
+  `id` int(11) NOT NULL,
   `exam_module_id` int(11) NOT NULL,
-  `image` varchar(512) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `image` varchar(512) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `marks` int(11) NOT NULL,
   `question` text CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
   `question_type` tinyint(4) NOT NULL COMMENT '1=normal, 2=true/false',
@@ -280,26 +234,107 @@ CREATE TABLE IF NOT EXISTS `tbl_exam_module_question` (
   `optionc` text CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
   `optiond` text CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
   `optione` text CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
-  `answer` text CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `category` (`exam_module_id`)
+  `answer` text CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_fun_n_learn_question`
+-- Table structure for table `tbl_fun_n_learn`
 --
--- Error reading structure for table lingofresh.tbl_fun_n_learn_question: #1932 - Table &#039;lingofresh.tbl_fun_n_learn_question&#039; doesn&#039;t exist in engine
--- Error reading data for table lingofresh.tbl_fun_n_learn_question: #1064 - You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near &#039;FROM `lingofresh`.`tbl_fun_n_learn_question`&#039; at line 1
+
+CREATE TABLE `tbl_fun_n_learn` (
+  `id` int(11) NOT NULL,
+  `language_id` int(11) NOT NULL DEFAULT 0,
+  `category` int(11) NOT NULL,
+  `subcategory` int(11) NOT NULL DEFAULT 0,
+  `title` varchar(255) NOT NULL,
+  `detail` text DEFAULT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_guess_the_word`
+--
+
+CREATE TABLE `tbl_guess_the_word` (
+  `id` int(11) NOT NULL,
+  `language_id` int(11) NOT NULL DEFAULT 0,
+  `category` int(11) NOT NULL,
+  `subcategory` int(11) NOT NULL DEFAULT 0,
+  `image` varchar(255) DEFAULT '',
+  `question` text NOT NULL,
+  `answer` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `tbl_languages`
 --
--- Error reading structure for table lingofresh.tbl_languages: #1932 - Table &#039;lingofresh.tbl_languages&#039; doesn&#039;t exist in engine
--- Error reading data for table lingofresh.tbl_languages: #1064 - You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near &#039;FROM `lingofresh`.`tbl_languages`&#039; at line 1
+
+CREATE TABLE `tbl_languages` (
+  `id` int(11) NOT NULL,
+  `language` varchar(100) NOT NULL,
+  `code` varchar(20) NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT 1,
+  `type` tinyint(1) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_month_week`
+--
+
+CREATE TABLE `tbl_month_week` (
+  `id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `type` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_question`
+--
+
+CREATE TABLE `tbl_question` (
+  `id` int(11) NOT NULL,
+  `category` int(11) NOT NULL,
+  `subcategory` int(11) NOT NULL DEFAULT 0,
+  `language_id` int(11) NOT NULL DEFAULT 0,
+  `image` varchar(255) DEFAULT '',
+  `question` text NOT NULL,
+  `question_type` tinyint(1) NOT NULL,
+  `optiona` varchar(255) NOT NULL,
+  `optionb` varchar(255) NOT NULL,
+  `optionc` varchar(255) DEFAULT '',
+  `optiond` varchar(255) DEFAULT '',
+  `optione` varchar(255) DEFAULT '',
+  `answer` varchar(10) NOT NULL,
+  `level` varchar(50) NOT NULL,
+  `note` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_rooms`
+--
+
+CREATE TABLE `tbl_rooms` (
+  `id` int(11) NOT NULL,
+  `room_id` varchar(100) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `room_type` varchar(50) NOT NULL,
+  `category_id` varchar(100) DEFAULT '',
+  `no_of_que` int(11) NOT NULL,
+  `questions` text NOT NULL,
+  `date_created` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -307,13 +342,11 @@ CREATE TABLE IF NOT EXISTS `tbl_exam_module_question` (
 -- Table structure for table `tbl_settings`
 --
 
-DROP TABLE IF EXISTS `tbl_settings`;
-CREATE TABLE IF NOT EXISTS `tbl_settings` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tbl_settings` (
+  `id` int(11) NOT NULL,
   `type` varchar(32) NOT NULL,
-  `message` text CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=84 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `message` text CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tbl_settings`
@@ -399,6 +432,254 @@ INSERT INTO `tbl_settings` (`id`, `type`, `message`) VALUES
 (81, 'battle_mode_one', '1'),
 (82, 'battle_mode_group', '1'),
 (83, 'true_false_mode', '1');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_subcategory`
+--
+
+CREATE TABLE `tbl_subcategory` (
+  `id` int(11) NOT NULL,
+  `language_id` int(11) NOT NULL DEFAULT 0,
+  `maincat_id` int(11) NOT NULL,
+  `subcategory_name` varchar(255) NOT NULL,
+  `image` varchar(255) DEFAULT '',
+  `status` tinyint(1) NOT NULL DEFAULT 1,
+  `row_order` int(11) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_users`
+--
+
+CREATE TABLE `tbl_users` (
+  `id` int(11) NOT NULL,
+  `firebase_id` varchar(100) NOT NULL,
+  `name` varchar(100) DEFAULT '',
+  `email` varchar(100) DEFAULT '',
+  `mobile` varchar(20) DEFAULT '',
+  `type` varchar(20) DEFAULT '',
+  `profile` varchar(255) DEFAULT '',
+  `fcm_id` varchar(255) DEFAULT '',
+  `coins` int(11) NOT NULL DEFAULT 0,
+  `refer_code` varchar(50) DEFAULT '',
+  `friends_code` varchar(50) DEFAULT '',
+  `status` tinyint(1) NOT NULL DEFAULT 1,
+  `date_registered` datetime NOT NULL,
+  `api_token` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `tbl_audio_question`
+--
+ALTER TABLE `tbl_audio_question`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `category` (`category`),
+  ADD KEY `subcategory` (`subcategory`) USING BTREE,
+  ADD KEY `language_id` (`language_id`);
+
+--
+-- Indexes for table `tbl_authenticate`
+--
+ALTER TABLE `tbl_authenticate`
+  ADD PRIMARY KEY (`auth_id`);
+
+--
+-- Indexes for table `tbl_badges`
+--
+ALTER TABLE `tbl_badges`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `type` (`type`);
+
+--
+-- Indexes for table `tbl_battle_questions`
+--
+ALTER TABLE `tbl_battle_questions`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `match_id` (`match_id`);
+
+--
+-- Indexes for table `tbl_category`
+--
+ALTER TABLE `tbl_category`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `language_id` (`language_id`);
+
+--
+-- Indexes for table `tbl_contest`
+--
+ALTER TABLE `tbl_contest`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_exam_module_question`
+--
+ALTER TABLE `tbl_exam_module_question`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `category` (`exam_module_id`);
+
+--
+-- Indexes for table `tbl_fun_n_learn`
+--
+ALTER TABLE `tbl_fun_n_learn`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_guess_the_word`
+--
+ALTER TABLE `tbl_guess_the_word`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_languages`
+--
+ALTER TABLE `tbl_languages`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_month_week`
+--
+ALTER TABLE `tbl_month_week`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_question`
+--
+ALTER TABLE `tbl_question`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_rooms`
+--
+ALTER TABLE `tbl_rooms`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `room_id` (`room_id`);
+
+--
+-- Indexes for table `tbl_settings`
+--
+ALTER TABLE `tbl_settings`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_subcategory`
+--
+ALTER TABLE `tbl_subcategory`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_users`
+--
+ALTER TABLE `tbl_users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `firebase_id` (`firebase_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `tbl_audio_question`
+--
+ALTER TABLE `tbl_audio_question`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tbl_authenticate`
+--
+ALTER TABLE `tbl_authenticate`
+  MODIFY `auth_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `tbl_badges`
+--
+ALTER TABLE `tbl_badges`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tbl_battle_questions`
+--
+ALTER TABLE `tbl_battle_questions`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tbl_category`
+--
+ALTER TABLE `tbl_category`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tbl_contest`
+--
+ALTER TABLE `tbl_contest`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tbl_exam_module_question`
+--
+ALTER TABLE `tbl_exam_module_question`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tbl_fun_n_learn`
+--
+ALTER TABLE `tbl_fun_n_learn`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tbl_guess_the_word`
+--
+ALTER TABLE `tbl_guess_the_word`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tbl_languages`
+--
+ALTER TABLE `tbl_languages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tbl_month_week`
+--
+ALTER TABLE `tbl_month_week`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tbl_question`
+--
+ALTER TABLE `tbl_question`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tbl_rooms`
+--
+ALTER TABLE `tbl_rooms`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tbl_settings`
+--
+ALTER TABLE `tbl_settings`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
+
+--
+-- AUTO_INCREMENT for table `tbl_subcategory`
+--
+ALTER TABLE `tbl_subcategory`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tbl_users`
+--
+ALTER TABLE `tbl_users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
